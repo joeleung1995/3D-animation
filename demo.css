@@ -1,0 +1,91 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.wrapper {
+	width: 700px;
+	height: 500px;
+	margin: 100px auto;
+}
+ul {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	align-items: center;
+}
+li {
+	width: 200px;
+	height: 200px;
+	perspective: 300px;
+}
+
+/*item及其子节点样式*/
+.item {
+	position: relative;
+}
+li .pic_box {
+	position: relative;
+	transform-style: preserve-3d;
+	transform: rotate3d(0, 0, 0, 0);
+	transform-origin: center center -100px;
+	transition: transform 200ms linear;
+}
+
+/*每个item运动样式*/
+.item:hover .in_bottom {
+	transform: rotate3d(1, 0, 0, 90deg)
+}
+.item:hover .in_top {
+	transform: rotate3d(1, 0, 0, -90deg)
+}
+.item:hover .in_left {
+	transform: rotate3d(0, 1, 0, 90deg)
+}
+.item:hover .in_right {
+	transform: rotate3d(0, 1, 0, -90deg)
+}
+
+/*图片样式*/
+li .pic {
+	width: 200px;
+	height: 200px;
+	background: url("7.jpg") center;
+	background-size: cover;
+}
+
+/*黑色背景文字样式*/
+li .text {
+	transform: translate3d(0 , 0, -1px);
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 200px;
+	width: 200px;
+	background-color: #000;
+	color: #fff;
+	text-align: center;
+	line-height: 200px;
+	font-size: 60px;
+	font-weight: bold;
+}
+
+/*黑色背景文字的位置变换样式*/
+.item .in_left .text {
+	transform-origin: right;
+	transform: translate3d(-100%, 0, 0) rotate3d(0, -1, 0, 90deg);
+}
+.item .in_right .text {
+	transform-origin: left;
+	transform: translate3d(100%, 0, 0) rotate3d(0, 1, 0, 90deg);
+}
+.item .in_top .text {
+	transform-origin: bottom;
+	transform: translate3d(0, -100%, 0) rotate3d(1, 0, 0, 90deg);
+}
+.item .in_bottom .text {
+	transform-origin: top;
+	transform: translate3d(0, 100%, 0) rotate3d(-1, 0, 0, 90deg);
+}
