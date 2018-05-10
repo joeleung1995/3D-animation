@@ -5,3 +5,4 @@
 2 创建各个方向的CSS样式（transform：rotate3d()），但Class样式不加到HTML上，而是用js加上Class类，从而根据不同的鼠标进入方向有动态的样式  
 ## 难点：  
 确认鼠标进入方向
+![](http://my-first-bucket-1255365917.coscd.myqcloud.com/git/3d-animation-pic.png)
